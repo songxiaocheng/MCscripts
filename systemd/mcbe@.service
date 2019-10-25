@@ -9,7 +9,7 @@ Description=Minecraft Bedrock Edition server
 ExecReload=/usr/bin/tmux -S /tmp/tmux-mc/%i send-keys -t %i:0.0 reload Enter
 # Makes session %i on socket /tmp/tmux-mc/%i in background
 # Passing environment variables needs quotes in tmux
-ExecStart=/usr/bin/tmux -S /tmp/tmux-mc/%i new -ds %i 'LD_LIBRARY_PATH=. ./bedrock_server'
+ExecStart=/usr/bin/tmux -S /tmp/tmux-mc/%i new -ds %i 'LD_LIBRARY_PATH=. ./bedrock_server >> ./server.log 2>&1'
 ExecStartPre=/bin/mkdir -p /tmp/tmux-mc
 ExecStop=/opt/MC/MCstop.sh %i /tmp/tmux-mc/%i
 # Thanks for the security agowa338
