@@ -23,6 +23,7 @@ Restart=on-failure
 Type=forking
 User=mc
 WorkingDirectory=/opt/MC/%i
-
+StandardOutput=journal
+StandardError=journal
 [Install]
 WantedBy=multi-user.target
